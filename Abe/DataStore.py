@@ -74,6 +74,7 @@ CHAIN_CONFIG = [
     {"chain":"Worldcoin", "policy":"Sha256Chain",
      "code3":"WDC", "address_version":"\x49", "magic":"\xfb\xc0\xb6\xdb"},
     {"chain":"NovaCoin"},
+    {"chain":"BlackCoin"},
     {"chain":"CryptoCash"},
     {"chain":"Anoncoin", "policy":"Sha256Chain",
      "code3":"ANC", "address_version":"\x17", "magic":"\xFA\xCA\xBA\xDA" },
@@ -1728,7 +1729,9 @@ store._ddl['txout_approx'],
             'version':               block_version,
             }
 
-        is_stake_chain = chain is not None and chain.has_feature('nvc_proof_of_stake')
+        #FIXME
+        #is_stake_chain = chain is not None and chain.has_feature('nvc_proof_of_stake')
+        is_stake_chain = True
         if is_stake_chain:
             # Proof-of-stake display based loosely on CryptoManiac/novacoin and
             # http://nvc.cryptocoinexplorer.com.
